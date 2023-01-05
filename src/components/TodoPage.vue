@@ -1,72 +1,44 @@
 <template>
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="todo.css" />
-      <title></title>
-    </head>
+  <div>
+    <section class="todoapp">
+      <header class="header">
+        <h1>todos</h1>
+        <input
+          autofocus="autofocus"
+          autocomplete="off"
+          placeholder="What needs to be done?"
+          class="new-todo"
+        />
+      </header>
 
-    <body>
-      <div id="app">
-        <section class="todoapp">
-          <header class="header">
-            <h1>todos</h1>
-            <input
-              autofocus="autofocus"
-              autocomplete="off"
-              placeholder="What needs to be done?"
-              class="new-todo"
-            />
-          </header>
-          <section class="main">
-            <input id="toggle-all" type="checkbox" class="toggle-all" />
-            <label for="toggle-all">Mark all as complete</label>
-            <ul class="todo-list">
-              <li class="todo">
-                <div class="view">
-                  <input type="checkbox" class="toggle" />
-                  <label>acheter des bananes</label>
-                  <button class="destroy"></button>
-                </div>
-                <input type="text" class="edit" />
-              </li>
+      <section class="main">
+        <input id="toggle-all" type="checkbox" class="toggle-all" />
+        <label for="toggle-all">Mark all as complete</label>
+        <ul v-for="task in taskList" :key="task.id" class="todo-list">
+          <li class="todo">
+            <div class="view">
+              <!-- If status = checked add property checked -->
+              <input type="checkbox" class="toggle" checked />
+              <label>{{ task.name }}</label>
+              <button class="destroy"></button>
+            </div>
+            <input type="text" class="edit" value="{{ task.name }}" />
+          </li>
+        </ul>
+      </section>
 
-              <li class="todo completed">
-                <div class="view">
-                  <input type="checkbox" class="toggle" checked />
-                  <label>ranger la chambre</label>
-                  <button class="destroy"></button>
-                </div>
-                <input type="text" class="edit" />
-              </li>
-
-              <li class="todo editing">
-                <div class="view">
-                  <input type="checkbox" class="toggle" />
-                  <label>appeler Mamie</label>
-                  <button class="destroy"></button>
-                </div>
-                <input type="text" class="edit" value="appeler Mamie" />
-              </li>
-            </ul>
-          </section>
-          <footer class="footer">
-            <span class="todo-count"> <strong>1</strong> item left </span>
-            <ul class="filters">
-              <li><a href="#/all" class="selected">All</a></li>
-              <li><a href="#/active">Active</a></li>
-              <li><a href="#/completed">Completed</a></li>
-            </ul>
-            <button class="clear-completed">Clear completed</button>
-          </footer>
-        </section>
-        <footer class="info">
-          <p>Double-click to edit a todo</p>
-        </footer>
-      </div>
-    </body>
-  </html>
+      <footer class="footer">
+        <span class="todo-count"> <strong>1</strong> item left </span>
+        <ul class="filters">
+          <li><a href="#/all" class="selected">All</a></li>
+          <li><a href="#/active">Active</a></li>
+          <li><a href="#/completed">Completed</a></li>
+        </ul>
+        <button class="clear-completed">Clear completed</button>
+      </footer>
+    </section>
+    <footer class="info">
+      <p>Double-click to edit a todo</p>
+    </footer>
+  </div>
 </template>

@@ -21,7 +21,8 @@
 - Display count of Tasks by status
 - Display all Tasks
 - Display Tasks by status
-- Deployement
+
+- Deployement netlify
 
 ## 🏛️ `Technology used`
 
