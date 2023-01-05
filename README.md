@@ -1,16 +1,35 @@
-# todo-mvc
+# 🚀 Ynov VueJS Exercice Todo
 
-This template should help get you started developing with Vue 3 in Vite.
+## 🧑🏽‍💻 `Developpement Context`
 
-## Recommended IDE Setup
+- In autonomy
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## 🧱 `Features`
 
-## Customize configuration
+-
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## 📒 `Todo`
 
-## Project Setup
+- Set dynamic title
+- Add Task
+- Delete Task
+- Delete Task by status
+- Update Task's status
+- Update all Tasks status
+- Display count of Tasks by status
+- Display all Tasks
+- Display Tasks by status
+- Deployement
+
+## 🏛️ `Technology used`
+
+- Web app
+- VueJS
+- Vite
+
+## 🏗️ `Getting started`
+
+### install all dependencies
 
 ```sh
 npm install
@@ -33,4 +52,3 @@ npm run build
 ```sh
 npm run lint
 ```
-# Ynov_VueJS_Exercice_Todo
