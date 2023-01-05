@@ -8,6 +8,8 @@
           autocomplete="off"
           placeholder="What needs to be done?"
           class="new-todo"
+          v-model="nameTask"
+          @keyup.enter="addTask()"
         />
       </header>
 
@@ -52,7 +54,20 @@ export default {
         { id: 2, name: "Task 2", status: true },
         { id: 3, name: "Task 3", status: false },
       ],
+      nextId: 4,
+      nameTask: "",
     };
+  },
+
+  methods: {
+    addTask() {
+      this.taskList.push({
+        id: this.nextId,
+        name: this.nameTask,
+        status: false,
+      });
+      this.nextId++;
+    },
   },
 
   setup() {},
