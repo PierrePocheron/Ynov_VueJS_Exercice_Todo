@@ -67,6 +67,7 @@ export default {
         status: false,
       });
       this.nextId++;
+      this.nameTask = "";
     },
   },
 
