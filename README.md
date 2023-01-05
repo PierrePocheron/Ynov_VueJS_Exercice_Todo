@@ -10,14 +10,14 @@
 - Display status of Tasks
 - Add Task
 - Delete Task
+- Update Task's status
+- Display count of Tasks by status
 
 ## 📒 `Todo`
 
 - Set dynamic title
 - Delete Task by status
-- Update Task's status
 - Update all Tasks status
-- Display count of Tasks by status
 - Display Tasks by status
 
 - Deployement netlify
