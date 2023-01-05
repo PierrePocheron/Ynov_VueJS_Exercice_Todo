@@ -43,7 +43,9 @@
           <li><a href="#/active">Active</a></li>
           <li><a href="#/completed">Completed</a></li>
         </ul>
-        <button class="clear-completed">Clear completed</button>
+        <button class="clear-completed" @click="removeTaskCompleted()">
+          Clear completed
+        </button>
       </footer>
     </section>
     <footer class="info">
@@ -79,6 +81,10 @@ export default {
 
     removeTask(id) {
       this.taskList = this.taskList.filter((task) => task.id !== id);
+    },
+
+    removeTaskCompleted() {
+      this.taskList = this.taskList.filter((task) => !task.status);
     },
 
     updateTaskStatus(id, status) {

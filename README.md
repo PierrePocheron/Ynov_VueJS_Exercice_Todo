@@ -12,11 +12,11 @@
 - Delete Task
 - Update Task's status
 - Display count of Tasks by status
+- Delete all Tasks completed
 
 ## 📒 `Todo`
 
 - Set dynamic title
-- Delete Task by status
 - Update all Tasks status
 - Display Tasks by status
 
