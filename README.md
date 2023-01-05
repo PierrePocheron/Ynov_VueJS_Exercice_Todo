@@ -10,6 +10,8 @@
 
 ## 📒 `Todo`
 
+- Create object task
+
 - Set dynamic title
 - Add Task
 - Delete Task
