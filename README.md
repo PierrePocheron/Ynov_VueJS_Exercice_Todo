@@ -6,11 +6,10 @@
 
 ## 🧱 `Features`
 
--
+- Display all Tasks
+- Display status of Tasks
 
 ## 📒 `Todo`
-
-- Create object task
 
 - Set dynamic title
 - Add Task
@@ -19,7 +18,6 @@
 - Update Task's status
 - Update all Tasks status
 - Display count of Tasks by status
-- Display all Tasks
 - Display Tasks by status
 
 - Deployement netlify

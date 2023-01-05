@@ -18,7 +18,7 @@
           <li class="todo">
             <div class="view">
               <!-- If status = checked add property checked -->
-              <input type="checkbox" class="toggle" checked />
+              <input type="checkbox" class="toggle" :checked="task.status" />
               <label>{{ task.name }}</label>
               <button class="destroy"></button>
             </div>
