@@ -20,7 +20,12 @@
           <li class="todo">
             <div class="view">
               <!-- If status = checked add property checked -->
-              <input type="checkbox" class="toggle" :checked="task.status" />
+              <input
+                type="checkbox"
+                class="toggle"
+                :checked="task.status"
+                @click="updateTaskStatus(task.id, !task.status)"
+              />
               <label>{{ task.name }}</label>
               <button class="destroy" @click="removeTask(task.id)"></button>
             </div>
@@ -73,6 +78,17 @@ export default {
     removeTask(id) {
       this.taskList = this.taskList.filter((task) => task.id !== id);
     },
+
+    updateTaskStatus(id, status) {
+      this.taskList = this.taskList.map((task) => {
+        if (task.id === id) {
+          task.status = status;
+        }
+        return task;
+      });
+    },
+  },
+
   },
 
   setup() {},
