@@ -8,12 +8,12 @@
 
 - Display all Tasks
 - Display status of Tasks
+- Add Task
+- Delete Task
 
 ## 📒 `Todo`
 
 - Set dynamic title
-- Add Task
-- Delete Task
 - Delete Task by status
 - Update Task's status
 - Update all Tasks status

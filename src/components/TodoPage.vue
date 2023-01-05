@@ -22,7 +22,7 @@
               <!-- If status = checked add property checked -->
               <input type="checkbox" class="toggle" :checked="task.status" />
               <label>{{ task.name }}</label>
-              <button class="destroy"></button>
+              <button class="destroy" @click="removeTask(task.id)"></button>
             </div>
             <input type="text" class="edit" value="{{ task.name }}" />
           </li>
@@ -68,6 +68,10 @@ export default {
       });
       this.nextId++;
       this.nameTask = "";
+    },
+
+    removeTask(id) {
+      this.taskList = this.taskList.filter((task) => task.id !== id);
     },
   },
 
