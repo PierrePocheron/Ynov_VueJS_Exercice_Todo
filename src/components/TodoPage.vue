@@ -42,3 +42,19 @@
     </footer>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      taskList: [
+        { id: 1, name: "Task 1", status: true },
+        { id: 2, name: "Task 2", status: true },
+        { id: 3, name: "Task 3", status: false },
+      ],
+    };
+  },
+
+  setup() {},
+};
+</script>
