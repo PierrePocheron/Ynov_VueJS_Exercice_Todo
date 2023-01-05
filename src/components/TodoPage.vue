@@ -22,7 +22,7 @@
           @change="updateAllTaskStatus()"
         />
         <label for="toggle-all">Mark all as complete</label>
-        <ul v-for="task in taskList" :key="task.id" class="todo-list">
+        <ul v-for="task in filteredTaskList" :key="task.id" class="todo-list">
           <li class="todo">
             <div class="view">
               <!-- If status = checked add property checked -->
@@ -45,9 +45,30 @@
           <strong> {{ counterTaskLeft }} </strong> item left
         </span>
         <ul class="filters">
-          <li><a href="#/all" class="selected">All</a></li>
-          <li><a href="#/active">Active</a></li>
-          <li><a href="#/completed">Completed</a></li>
+          <li>
+            <a
+              href="#"
+              @click.prevent="filter = 'all'"
+              :class="{ selected: filter === 'all' }"
+              >All</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              @click.prevent="filter = 'active'"
+              :class="{ selected: filter === 'active' }"
+              >Active</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              @click.prevent="filter = 'completed'"
+              :class="{ selected: filter === 'completed' }"
+              >Completed</a
+            >
+          </li>
         </ul>
         <button class="clear-completed" @click="removeTaskCompleted()">
           Clear completed
@@ -61,8 +82,6 @@
 </template>
 
 <script>
-import { ref } from "vue";
-
 export default {
   data() {
     return {
@@ -74,6 +93,7 @@ export default {
       nextId: 4,
       nameTask: "",
       inputToggleAll: false,
+      filter: "all",
     };
   },
 
@@ -116,6 +136,14 @@ export default {
     counterTaskLeft: function () {
       var tasksLeft = this.taskList.filter((task) => !task.status);
       return tasksLeft.length;
+    },
+
+    filteredTaskList() {
+      if (this.filter === "active") {
+        return this.taskList.filter((task) => !task.status);
+      } else if (this.filter === "completed") {
+        return this.taskList.filter((task) => task.status);
+      } else return this.taskList;
     },
   },
 
