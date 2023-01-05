@@ -14,7 +14,13 @@
       </header>
 
       <section class="main">
-        <input id="toggle-all" type="checkbox" class="toggle-all" />
+        <input
+          id="toggle-all"
+          type="checkbox"
+          class="toggle-all"
+          v-model="inputToggleAll"
+          @change="updateAllTaskStatus()"
+        />
         <label for="toggle-all">Mark all as complete</label>
         <ul v-for="task in taskList" :key="task.id" class="todo-list">
           <li class="todo">
@@ -55,6 +61,8 @@
 </template>
 
 <script>
+import { ref } from "vue";
+
 export default {
   data() {
     return {
@@ -65,6 +73,7 @@ export default {
       ],
       nextId: 4,
       nameTask: "",
+      inputToggleAll: false,
     };
   },
 
@@ -93,6 +102,12 @@ export default {
           task.status = status;
         }
         return task;
+      });
+    },
+
+    updateAllTaskStatus() {
+      this.taskList.forEach((task) => {
+        task.status = this.inputToggleAll;
       });
     },
   },
